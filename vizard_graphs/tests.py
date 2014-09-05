@@ -30,8 +30,8 @@ class GraphViewTestCase(TestCase):
         client = Client()
         response = client.get(url)
         self.assertEquals(response.status_code,200)
-        self.assertTemplateUsed(response, 'graphs/single-graph.html')
-        self.assertTemplateUsed(response, 'graphs/graph-itself.html')
+        self.assertTemplateUsed(response, 'vizard_graphs/single-graph.html')
+        self.assertTemplateUsed(response, 'vizard_graphs/graph-itself.html')
 
 class GraphUpdateViewTestCase(TestCase):
     def setUp(self):

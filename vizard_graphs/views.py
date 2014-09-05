@@ -8,7 +8,7 @@ from vizard_graphs.models import Graph
 
 class GraphDisplayView(DetailView):
     model = Graph
-    template_name = 'graphs/single-graph.html'
+    template_name = 'vizard_graphs/single-graph.html'
 
 class GraphUpdateView(UpdateView):
     model = Graph
