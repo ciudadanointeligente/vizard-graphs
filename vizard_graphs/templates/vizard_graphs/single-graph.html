@@ -1,1 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block extralinkjs %}
+<script type="text/javascript" src="{% static 'vendor/joint.all.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/jquery-cookie/jquery.cookie.js' %}"></script>
+<script src="{% static 'javascripts/drawer.js' %}"></script>
+{% endblock extralinkjs %}
+
+
+{% block content %}
+<div class="save_graph">Save</div>
+<div id="the_graph"></div>
+
 {% include 'vizard_graphs/graph-itself.html' %}
+
+
+
+{% endblock content %}
+
+
+
+
+

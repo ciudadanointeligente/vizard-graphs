@@ -1,0 +1,30 @@
+{% load vizard_graphs_tags %}
+{% block extrascripts %}
+<script type="text/javascript">
+	function csrfSafeMethod(method) {
+	    // these HTTP methods do not require CSRF protection
+	    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+	}
+	$.ajaxSetup({
+	    beforeSend: function(xhr, settings) {
+	        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+	        	var csrftoken = $.cookie('csrftoken')
+	            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	        }
+	    }
+	});
+	$(function(){
+		var original_json = {{ graph|data_to_json }};
+		var mapper = new VizardMapper($("#the_graph"));
+		mapper.graph.fromJSON(original_json);
+		$(".save_graph").click(function(){
+			var json =mapper.graph.toJSON()
+			var url = "{% url 'graph-update-view' pk=graph.id %}";
+			$.post(url, data={'data':JSON.stringify(json)}, function(data){
+			})
+			
+			
+		})
+	})
+</script>
+{% endblock extrascripts %}
