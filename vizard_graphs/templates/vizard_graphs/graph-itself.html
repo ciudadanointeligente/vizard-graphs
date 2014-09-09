@@ -16,7 +16,10 @@
 	$(function(){
 		var original_json = {{ graph|data_to_json }};
 		var mapper = new VizardMapper($("#the_graph"));
-		mapper.graph.fromJSON(original_json);
+		if (original_json){
+			mapper.graph.fromJSON(original_json);
+		}
+		
 		$(".save_graph").click(function(){
 			var json =mapper.graph.toJSON()
 			var url = "{% url 'graph-update-view' pk=graph.id %}";
