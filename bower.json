@@ -1,0 +1,28 @@
+{
+  "name": "vizard2",
+  "version": "0.0.0",
+  "authors": [
+    "lab@ciudadanointeligente.org"
+  ],
+  "description": "Vizard helps you draw things in the web",
+  "main": "public/javascripts/drawer.js",
+  "keywords": [
+    "charting"
+  ],
+  "license": "MIT",
+  "homepage": "ciudadanointeligente.org",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "joint": "~0.9.1",
+    "jquery-cookie": "~1.4.1"
+  },
+  "devDependencies": {
+    "qunit": "~1.*.*"
+  }
+}
