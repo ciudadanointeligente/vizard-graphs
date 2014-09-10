@@ -1,5 +1,5 @@
 include LICENSE
 include README.md
-recursive-include vizard_graphs *.py
 recursive-include vizard_graphs/templates *
 recursive-include vizard_graphs/static *
+

@@ -1,9 +1,12 @@
-from setuptools import setup
+import os
+from setuptools import setup, find_packages
+
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(name='vizard_graphs',
       version='0.0.1',
-      packages=['vizard_graphs'],
-#      package_data = {'vizard_graphs': ['templates/*','static/*',],},
+      packages=find_packages(),
+      include_package_data=True,
       license='MIT',
       author='Ciudadano Inteligente',
       author_email='lab@ciudadanointeligente.org',
